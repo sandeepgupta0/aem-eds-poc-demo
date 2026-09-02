@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "product-listing"
     ]
   },
   {
@@ -38,5 +39,9 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "product-listing-items",
+    "components": []
   }
 ]
