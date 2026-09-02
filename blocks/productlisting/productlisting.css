@@ -1,18 +1,18 @@
-/* EDS Block: product-listing */
+/* EDS Block: productlisting */
 /* Auto-generated scaffold - REVIEW BEFORE USE */
 /* Source: /var/folders/4d/vcs_9pns27q909vg49074y3c0000gp/T/eds-extract-ee36055e-c68c-491f-9047-2d17ef4bee1e/my-react-app/src/components/ProductListing/ProductListing.js */
 
-.product-listing {
+.productlisting {
   /* Block container styles */
 }
 
 /* Loading state */
-.product-listing__loading {
+.productlisting__loading {
   padding: 40px;
   text-align: center;
 }
 
-.product-listing__loading .spinner {
+.productlisting__loading .spinner {
   width: 40px;
   height: 40px;
   border: 4px solid #f3f3f3;
@@ -28,29 +28,29 @@
 }
 
 /* Error state */
-.product-listing__error {
+.productlisting__error {
   padding: 40px;
   text-align: center;
   color: #d32f2f;
 }
 
-.product-listing__error h3 {
+.productlisting__error h3 {
   margin: 0 0 8px;
 }
 
-.product-listing [data-field="text"] {
+.productlisting [data-field="text"] {
   /* text field styles */
 }
 
-.product-listing [data-field="text-1"] {
+.productlisting [data-field="text-1"] {
   /* text field styles */
 }
 
-.product-listing [data-field="text-2"] {
+.productlisting [data-field="text-2"] {
   /* text field styles */
 }
 
-.product-listing [data-field="repeatable"] {
+.productlisting [data-field="repeatable"] {
   /* repeatable field styles */
 }
 

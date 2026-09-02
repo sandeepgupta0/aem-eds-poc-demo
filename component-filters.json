@@ -16,7 +16,7 @@
       "cards",
       "columns",
       "fragment",
-      "product-listing"
+      "productlisting"
     ]
   },
   {
@@ -41,7 +41,7 @@
     ]
   },
   {
-    "id": "product-listing-items",
+    "id": "productlisting-items",
     "components": []
   }
 ]

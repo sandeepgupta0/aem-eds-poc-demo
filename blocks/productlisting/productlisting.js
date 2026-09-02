@@ -1,5 +1,5 @@
 /**
- * EDS Block: product-listing
+ * EDS Block: productlisting
  * Auto-generated scaffold - REVIEW BEFORE USE
  * Source: /var/folders/4d/vcs_9pns27q909vg49074y3c0000gp/T/eds-extract-ee36055e-c68c-491f-9047-2d17ef4bee1e/my-react-app/src/components/ProductListing/ProductListing.js
  */
@@ -45,7 +45,7 @@ export default async function decorate(block) {
     function renderLoadingState(container) {
         container.innerHTML = ''; // Clear existing content
         const wrapper = document.createElement('div');
-        wrapper.className = 'product-listing__loading';
+        wrapper.className = 'productlisting__loading';
         // Using template literals for clean HTML injection
         wrapper.innerHTML = '<div class="spinner"></div><p>Loading products...</p>'; 
         container.appendChild(wrapper);
@@ -59,7 +59,7 @@ export default async function decorate(block) {
     function renderErrorState(container, message) {
         container.innerHTML = ''; // Clear existing content
         const wrapper = document.createElement('div');
-        wrapper.className = 'product-listing__error';
+        wrapper.className = 'productlisting__error';
 
         // Error structure: Title, Message, Button
         wrapper.innerHTML = `
@@ -70,7 +70,7 @@ export default async function decorate(block) {
         container.appendChild(wrapper);
 
         // Attach retry handler (re-run the decoration process)
-        const retryButton = container.querySelector('.product-listing__error button');
+        const retryButton = container.querySelector('.productlisting__error button');
         if (retryButton) {
             retryButton.addEventListener('click', () => {
                 // Re-fetch data by re-calling decorate, or simply calling a dedicated fetch function
@@ -88,7 +88,7 @@ export default async function decorate(block) {
         container.innerHTML = ''; // Clear existing content
 
         const el_node_12 = document.createElement('div');
-        el_node_12.classList.add('product-listing__products');
+        el_node_12.classList.add('productlisting__products');
 
         if (productsList.length === 0) {
             el_node_12.innerHTML = '<p>No products found.</p>';
@@ -99,7 +99,7 @@ export default async function decorate(block) {
             productsList.forEach((product) => {
                 // Placeholder for nested component <ProductCard> - generated as separate EDS block "product-card"
                 const row = document.createElement('div');
-                row.classList.add('product-listing__item'); 
+                row.classList.add('productlisting__item'); 
                 row.innerHTML = `
                     <img src="${product.thumbnail}" alt="${product.title}">
                     <div class="product-info">
