@@ -15,10 +15,7 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "badges",
-      "product-card",
-      "product-listing"
+      "fragment"
     ]
   },
   {
@@ -40,12 +37,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "product-listing-items",
-    "components": [
-      "product-card"
     ]
   }
 ]
