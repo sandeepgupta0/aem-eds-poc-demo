@@ -142,6 +142,19 @@
     ]
   },
   {
+    "id": "badges",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": "",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -212,6 +225,56 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "product-card",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": "",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text-1",
+        "label": "Text 1",
+        "value": "",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "product-listing",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": "Loading products...",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text-1",
+        "label": "Text 1",
+        "value": "Error:",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text-2",
+        "label": "Text 2",
+        "value": "Retry",
+        "multi": false
       }
     ]
   }
