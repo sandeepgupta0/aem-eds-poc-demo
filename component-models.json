@@ -214,32 +214,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "product",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Product Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Product Title"
-      },
-      {
-        "component": "text",
-        "name": "description",
-        "label": "Product Description"
-      },
-      {
-        "component": "link",
-        "name": "link",
-        "label": "Product Link"
-      }
-    ]
   }
 ]
