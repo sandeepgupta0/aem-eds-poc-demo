@@ -216,17 +216,19 @@
     ]
   },
   {
-    "id": "product-listing",
+    "id": "product",
     "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
       {
         "component": "text",
         "name": "title",
         "label": "Product Title"
-      },
-      {
-        "component": "image",
-        "name": "image",
-        "label": "Product Image"
       },
       {
         "component": "text",
