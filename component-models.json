@@ -214,5 +214,38 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "product-listing",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": "Loading products...",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text-1",
+        "label": "Text 1",
+        "value": "Error:",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text-2",
+        "label": "Text 2",
+        "value": "Retry",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "product-listing-repeatable-item",
+    "fields": []
   }
 ]
