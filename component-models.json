@@ -214,5 +214,30 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "product-listing",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Product Title"
+      },
+      {
+        "component": "image",
+        "name": "image",
+        "label": "Product Image"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Product Description"
+      },
+      {
+        "component": "link",
+        "name": "link",
+        "label": "Product Link"
+      }
+    ]
   }
 ]
