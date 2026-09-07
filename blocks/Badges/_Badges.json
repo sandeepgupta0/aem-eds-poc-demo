@@ -1,78 +1,55 @@
 {
-  "models": [
-    {
-      "name": "Badges",
-      "description": "A block component for displaying badges.",
-      "fields": [
-        {
-          "name": "children",
-          "label": "Children",
-          "component": "text",
-          "type": "text",
-          "required": false,
-          "validation": {
-            "maxLength": 250
-          }
-        },
-        {
-          "name": "variant",
-          "label": "Variant",
-          "component": "text",
-          "type": "text",
-          "required": false,
-          "validation": {
-            "maxLength": 100
-          }
-        }
-      ]
-    }
-  ],
   "definitions": [
     {
-      "name": "Badges",
-      "description": "Defines the structure for the Badges block.",
+      "title": "Badges",
+      "id": "Badges",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Badges",
+              "model": "Badges"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "Badges",
       "fields": [
         {
+          "component": "text",
+          "valueType": "string",
           "name": "children",
           "label": "Children",
-          "component": "text",
-          "type": "text",
-          "authorable": true,
-          "contentEditable": true
+          "value": ""
         },
         {
+          "component": "select",
+          "valueType": "string",
           "name": "variant",
           "label": "Variant",
-          "component": "text",
-          "type": "text",
-          "authorable": true,
-          "contentEditable": true
+          "value": "default",
+          "options": [
+            {
+              "name": "Default",
+              "value": "default"
+            },
+            {
+              "name": "Success",
+              "value": "success"
+            },
+            {
+              "name": "Danger",
+              "value": "danger"
+            }
+          ]
         }
       ]
     }
   ],
-  "filters": [
-    {
-      "name": "Badges",
-      "description": "Filters for the Badges block.",
-      "fields": [
-        {
-          "name": "children",
-          "label": "Children",
-          "component": "text",
-          "type": "text",
-          "authorable": true,
-          "contentEditable": true
-        },
-        {
-          "name": "variant",
-          "label": "Variant",
-          "component": "text",
-          "type": "text",
-          "authorable": true,
-          "contentEditable": true
-        }
-      ]
-    }
-  ]
+  "filters": []
 }
