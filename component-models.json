@@ -142,6 +142,94 @@
     ]
   },
   {
+    "id": "Badges",
+    "fields": [
+      {
+        "name": "children",
+        "label": "Content",
+        "component": "text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "component": "select",
+        "valueType": "string",
+        "value": "",
+        "options": [
+          {
+            "name": "Success",
+            "value": "success"
+          },
+          {
+            "name": "Danger",
+            "value": "danger"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ProductCard",
+    "fields": [
+      {
+        "name": "title",
+        "label": "Title",
+        "component": "text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "component": "number",
+        "valueType": "number",
+        "value": ""
+      },
+      {
+        "name": "category",
+        "label": "Category",
+        "component": "text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "stock",
+        "label": "Stock",
+        "component": "number",
+        "valueType": "number",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "ProductListing",
+    "fields": [
+      {
+        "name": "text",
+        "component": "text",
+        "valueType": "string",
+        "value": "",
+        "label": "Text"
+      },
+      {
+        "name": "image",
+        "component": "reference",
+        "valueType": "string",
+        "multi": false,
+        "label": "Image"
+      },
+      {
+        "name": "alt",
+        "component": "text",
+        "valueType": "string",
+        "value": "",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

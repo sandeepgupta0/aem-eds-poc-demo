@@ -1,0 +1,25 @@
+{
+  "models": [
+    {
+      "id": "ProductCard",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "name": "price",
+          "label": "Price"
+        },
+        {
+          "name": "category",
+          "label": "Category"
+        },
+        {
+          "name": "stock",
+          "label": "Stock"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "filters": [
+    {
+      "id": "ProductCards",
+      "components": [
+        "product"
+      ]
+    }
+  ]
+}

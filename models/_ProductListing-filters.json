@@ -1,0 +1,13 @@
+{
+  "filters": [
+    {
+      "id": "ProductListings",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title"
+      ]
+    }
+  ]
+}

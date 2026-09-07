@@ -1,0 +1,11 @@
+{
+  "filters": [
+    {
+      "id": "Badgess",
+      "components": [
+        "children",
+        "variant"
+      ]
+    }
+  ]
+}
