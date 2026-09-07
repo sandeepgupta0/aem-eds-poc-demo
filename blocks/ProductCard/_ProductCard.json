@@ -22,31 +22,19 @@
       "fields": [
         {
           "name": "title",
-          "label": "Title",
-          "component": "text",
-          "valueType": "string",
-          "value": ""
+          "label": "Title"
         },
         {
           "name": "price",
-          "label": "Price",
-          "component": "number",
-          "valueType": "number",
-          "value": ""
+          "label": "Price"
         },
         {
           "name": "category",
-          "label": "Category",
-          "component": "text",
-          "valueType": "string",
-          "value": ""
+          "label": "Category"
         },
         {
           "name": "stock",
-          "label": "Stock",
-          "component": "number",
-          "valueType": "number",
-          "value": ""
+          "label": "Stock"
         }
       ]
     }

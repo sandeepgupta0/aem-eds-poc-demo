@@ -22,27 +22,17 @@
       "fields": [
         {
           "name": "children",
-          "label": "Content",
+          "label": "children",
           "component": "text",
           "valueType": "string",
           "value": ""
         },
         {
           "name": "variant",
-          "label": "Variant",
-          "component": "select",
+          "label": "variant",
+          "component": "text",
           "valueType": "string",
-          "value": "",
-          "options": [
-            {
-              "name": "Success",
-              "value": "success"
-            },
-            {
-              "name": "Danger",
-              "value": "danger"
-            }
-          ]
+          "value": ""
         }
       ]
     }

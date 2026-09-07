@@ -71,7 +71,7 @@ export function renderProductListing(container, props) {
     container.appendChild(el4);
     return container;
     }
-    const products = (data?.products) || ([]);
+    const products = (Array.isArray(data) ? data : data?.products) || ([]);
     if (!products.length) {
     appendText(container, "No Product Available");
     return container;

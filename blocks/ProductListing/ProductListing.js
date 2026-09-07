@@ -7,10 +7,6 @@
 
 import { moveInstrumentation } from '../../scripts/scripts.js';
 import {
-  formatPrice,
-  applyInlineStyle,
-  appendText,
-  dispatchEvent,
   setDefaultCurrency,
   renderProductListing,
 } from '../shared/generated-jsx.js';
@@ -29,12 +25,14 @@ export default async function decorate(block) {
   const renderBlock = () => {
     block.replaceChildren();
     try {
-      renderProductListing(block, { data, loading, error, retry, currency: block.dataset.currency || null });
+      renderProductListing(block, {
+        data, loading, error, retry, currency: block.dataset.currency || null,
+      });
     } catch (err) {
       const p = document.createElement('p');
-      p.textContent = 'Render error: ' + (err instanceof Error ? err.message : String(err));
+      p.textContent = `Render error: ${err instanceof Error ? err.message : String(err)}`;
       block.appendChild(p);
-      console.error(err);
+      console.error(err); // eslint-disable-line no-console
     }
   };
 
@@ -43,9 +41,11 @@ export default async function decorate(block) {
     error = null;
     renderBlock();
     try {
-      const response = await fetch("https://dummyjson.com/products?limit=10&skip=10");
-      if (!response.ok) throw new Error('HTTP ' + response.status);
-      data = await response.json();
+      const response = await fetch('https://fakestoreapi.com/products');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const products = await response.json();
+      products.forEach((p) => { p.stock = p.stock ?? 10; });
+      data = { products };
     } catch (err) {
       error = err instanceof Error ? err.message : String(err);
     } finally {

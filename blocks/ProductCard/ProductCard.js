@@ -27,6 +27,14 @@ export default async function decorate(block) {
   } catch (err) {
     console.error('Invalid block model JSON', err);
   }
+  // Group flat authored fields (from the UE model) back under the render's object props.
+  for (const [key, fields] of Object.entries({"product":["title","price","category","stock"]})) {
+    if (blockProps[key] == null && fields.some((f) => blockProps[f] != null)) {
+      const grouped = {};
+      for (const f of fields) if (blockProps[f] != null) grouped[f] = blockProps[f];
+      blockProps[key] = grouped;
+    }
+  }
   if (blockProps.currency == null) blockProps.currency = block.dataset.currency || null;
 
   block.replaceChildren();
