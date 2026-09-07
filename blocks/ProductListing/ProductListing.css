@@ -1,0 +1,150 @@
+/* stylelint-disable selector-class-pattern */
+
+/* =========================================
+   ProductListing Block Styles
+   Scope: .ProductListing
+   Approach: Mobile-First
+   ========================================= */
+
+/* -----------------------------------------
+   1. CSS Custom Properties & Variables
+   ----------------------------------------- */
+:root {
+    --product-listing-color-primary: #007bff;
+    --product-listing-color-secondary: #6c757d;
+    --product-listing-color-background: #fff;
+    --product-listing-color-border: #dee2e6;
+    --product-listing-color-text: #343a40;
+    --product-listing-spacing-unit: 1rem;
+}
+
+/* -----------------------------------------
+   2. Base Container Styles (Mobile First)
+   ----------------------------------------- */
+.ProductListing {
+    display: flex;
+    flex-direction: column;
+    gap: var(--product-listing-spacing-unit);
+    padding: 0 var(--product-listing-spacing-unit);
+}
+
+/* Product Grid Container (Used for actual product cards) */
+.ProductListing__grid {
+    display: grid;
+
+    /* Mobile default: single column layout */
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--product-listing-spacing-unit);
+}
+
+/* Individual Product Card Styling */
+.ProductCard {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--product-listing-color-background);
+    border: 1px solid var(--product-listing-color-border);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    text-decoration: none; /* For anchor tags inside the card */
+    color: inherit;
+}
+
+/* Product Card Interaction Styles (Hover & Focus) */
+.ProductCard:hover {
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    transform: translateY(-3px);
+}
+
+.ProductCard:focus-visible {
+    outline: 3px solid var(--product-listing-color-primary);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 3px rgb(0 123 255 / 25%); /* Visual focus indicator */
+}
+
+/* Product Title/Link Styling (Ensuring accessibility) */
+.ProductCard__title {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    color: var(--product-listing-color-text);
+}
+
+/* Product Image Styling */
+.ProductImageWrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Ensures square images on mobile */
+    overflow: hidden;
+}
+
+.ProductImageWrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* -----------------------------------------
+   3. State Styles (Loading, Error, Empty)
+   ----------------------------------------- */
+
+/* Loading State */
+.ProductListing-loading {
+    min-height: 200px; /* Placeholder height to prevent layout shift */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ProductListing-loading__spinner {
+    border: 4px solid rgb(0 0 0 / 10%);
+    border-top: 4px solid var(--product-listing-color-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Error State */
+.ProductListing-error {
+    padding: var(--product-listing-spacing-unit) * 2;
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c6cb; /* Red border */
+    color: #721c24; /* Dark red text */
+    text-align: center;
+}
+
+/* Empty State */
+.ProductListing-empty {
+    padding: var(--product-listing-spacing-unit) * 3;
+    background-color: var(--product-listing-color-background);
+    border: 2px dashed var(--product-listing-color-secondary);
+    text-align: center;
+}
+
+/* -----------------------------------------
+   4. Media Queries (Responsiveness)
+   ----------------------------------------- */
+
+/* Tablet Breakpoint (>= 600px) */
+@media (width >= 600px) {
+    .ProductListing__grid {
+        /* Two columns on tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Breakpoint (>= 900px) */
+@media (width >= 900px) {
+    .ProductListing__grid {
+        /* Three columns on desktop */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* -----------------------------------------
+   5. Keyframes & Animations
+   ----------------------------------------- */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

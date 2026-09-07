@@ -1,0 +1,78 @@
+{
+  "models": [
+    {
+      "name": "Badges",
+      "description": "A block component for displaying badges.",
+      "fields": [
+        {
+          "name": "children",
+          "label": "Children",
+          "component": "text",
+          "type": "text",
+          "required": false,
+          "validation": {
+            "maxLength": 250
+          }
+        },
+        {
+          "name": "variant",
+          "label": "Variant",
+          "component": "text",
+          "type": "text",
+          "required": false,
+          "validation": {
+            "maxLength": 100
+          }
+        }
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "name": "Badges",
+      "description": "Defines the structure for the Badges block.",
+      "fields": [
+        {
+          "name": "children",
+          "label": "Children",
+          "component": "text",
+          "type": "text",
+          "authorable": true,
+          "contentEditable": true
+        },
+        {
+          "name": "variant",
+          "label": "Variant",
+          "component": "text",
+          "type": "text",
+          "authorable": true,
+          "contentEditable": true
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "name": "Badges",
+      "description": "Filters for the Badges block.",
+      "fields": [
+        {
+          "name": "children",
+          "label": "Children",
+          "component": "text",
+          "type": "text",
+          "authorable": true,
+          "contentEditable": true
+        },
+        {
+          "name": "variant",
+          "label": "Variant",
+          "component": "text",
+          "type": "text",
+          "authorable": true,
+          "contentEditable": true
+        }
+      ]
+    }
+  ]
+}

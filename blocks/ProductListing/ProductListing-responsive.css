@@ -1,0 +1,14 @@
+/* stylelint-disable selector-class-pattern */
+
+/* EDS Block: ProductListing - Responsive Styles */
+
+/* Mobile-first base styles */
+.ProductListing {
+  /* Mobile styles */
+}
+
+@media (width >= 900px) {
+  .ProductListing {
+    /* Desktop styles */
+  }
+}

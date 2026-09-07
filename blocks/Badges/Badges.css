@@ -1,0 +1,131 @@
+/* stylelint-disable selector-class-pattern */
+
+/* =========================================
+   1. Variables & Base Setup
+   ========================================= */
+.Badges {
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-text-light: #fff;
+    --color-border-default: #dee2e6;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Spacing between badges */
+    padding: 4px 0;
+}
+
+/* =========================================
+   2. Badge Item Styling (The individual badge)
+   ========================================= */
+.Badges__badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 9999px; /* Pill shape */
+    cursor: default;
+    transition: background-color 0.2s, transform 0.1s;
+    font-weight: 500;
+}
+
+/* Variant Styling (Assuming 'variant' controls the color) */
+.Badges__badge--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-primary);
+}
+
+.Badges__badge--secondary {
+    background-color: #f8f9fa;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border-default);
+}
+
+.Badges__badge--success {
+    background-color: #e6ffed;
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+}
+
+.Badges__badge--danger {
+    background-color: #ffebee;
+    color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+}
+
+/* =========================================
+   3. Interactivity & Accessibility (Focus/Hover)
+   ========================================= */
+.Badges__badge:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+/* Accessibility Focus State (Crucial for keyboard navigation) */
+.Badges__badge:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* =========================================
+   4. State Styles
+   ========================================= */
+
+/* Loading State */
+.Badges-loading {
+    display: flex;
+    gap: 8px;
+    padding: 20px 0;
+    justify-content: center;
+}
+
+.Badges__spinner {
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgb(0 0 0 / 10%);
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    animation: spin 1s linear infinite;
+}
+
+/* Error State */
+.Badges-error {
+    padding: 20px;
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid var(--color-danger);
+    color: var(--color-danger);
+}
+
+/* Empty State */
+.Badges-empty {
+    padding: 20px;
+    text-align: center;
+    color: var(--color-secondary);
+    font-style: italic;
+}
+
+
+/* =========================================
+   5. Animations (Keyframes)
+   ========================================= */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================
+   6. Media Queries (Breakpoints - Mobile First already handled)
+   ========================================= */
+
+/* Example of a breakpoint adjustment if needed, though not strictly required by the prompt structure */
+@media (width >= 599px) {
+    /* If we had tablet/desktop specific layout changes for the container */
+}

@@ -83,6 +83,87 @@
       "id": "blocks",
       "components": [
         {
+          "name": "Badges",
+          "description": "Defines the structure for the Badges block.",
+          "fields": [
+            {
+              "name": "children",
+              "label": "Children",
+              "component": "text",
+              "type": "text",
+              "authorable": true,
+              "contentEditable": true
+            },
+            {
+              "name": "variant",
+              "label": "Variant",
+              "component": "text",
+              "type": "text",
+              "authorable": true,
+              "contentEditable": true
+            }
+          ]
+        },
+        {
+          "id": "text",
+          "name": "Text Input",
+          "description": "A simple text input field.",
+          "type": "string",
+          "component": "textfield"
+        },
+        {
+          "structured-content": {
+            "type": "StructuredContent",
+            "description": "A flexible container for complex product listing settings.",
+            "fields": [
+              {
+                "fieldId": "apiEndpoint",
+                "type": "text",
+                "label": "API Endpoint URL",
+                "placeholder": "https://api.example.com/products"
+              },
+              {
+                "fieldId": "displayFields",
+                "type": "checkbox-group",
+                "label": "Visible Product Fields",
+                "options": [
+                  {
+                    "value": "title",
+                    "label": "Title"
+                  },
+                  {
+                    "value": "price",
+                    "label": "Price"
+                  },
+                  {
+                    "value": "sku",
+                    "label": "SKU"
+                  }
+                ]
+              },
+              {
+                "fieldId": "sortOrder",
+                "type": "select-dropdown",
+                "label": "Default Sort Order",
+                "options": [
+                  {
+                    "value": "relevance",
+                    "label": "Relevance"
+                  },
+                  {
+                    "value": "price_asc",
+                    "label": "Price (Low to High)"
+                  },
+                  {
+                    "value": "newest",
+                    "label": "Newest First"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
           "title": "Cards",
           "id": "cards",
           "plugins": {

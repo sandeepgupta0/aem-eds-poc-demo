@@ -19,6 +19,38 @@
     ]
   },
   {
+    "name": "Badges",
+    "description": "Filters for the Badges block.",
+    "fields": [
+      {
+        "name": "children",
+        "label": "Children",
+        "component": "text",
+        "type": "text",
+        "authorable": true,
+        "contentEditable": true
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "component": "text",
+        "type": "text",
+        "authorable": true,
+        "contentEditable": true
+      }
+    ]
+  },
+  {
+    "fieldId": "productListingData",
+    "type": "structured-content",
+    "description": "Used for the authorable configuration of product listing data."
+  },
+  {
+    "fieldId": "productFilterSettings",
+    "type": "select-dropdown",
+    "description": "Used for selecting filtering criteria."
+  },
+  {
     "id": "cards",
     "components": [
       "card"

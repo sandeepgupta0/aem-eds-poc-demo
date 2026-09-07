@@ -142,6 +142,66 @@
     ]
   },
   {
+    "name": "Badges",
+    "description": "A block component for displaying badges.",
+    "fields": [
+      {
+        "name": "children",
+        "label": "Children",
+        "component": "text",
+        "type": "text",
+        "required": false,
+        "validation": {
+          "maxLength": 250
+        }
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "component": "text",
+        "type": "text",
+        "required": false,
+        "validation": {
+          "maxLength": 100
+        }
+      }
+    ]
+  },
+  {
+    "id": "ProductCard",
+    "name": "ProductCard",
+    "description": "A card component displaying product information.",
+    "fields": [
+      {
+        "name": "product",
+        "type": "text",
+        "label": "Product Name",
+        "required": true,
+        "component": "text"
+      }
+    ]
+  },
+  {
+    "name": "ProductListing",
+    "description": "A component designed to display a list of products fetched from an external API.",
+    "fields": [
+      {
+        "fieldId": "productListingData",
+        "type": "structured-content",
+        "label": "Product Listing Configuration",
+        "required": true,
+        "description": "Allows content authors to configure the product listing, potentially overriding the hardcoded API endpoint or selecting which fields (e.g., title, price) are displayed by the ProductCard component."
+      },
+      {
+        "fieldId": "productFilterSettings",
+        "type": "select-dropdown",
+        "label": "Filtering/Sorting Criteria",
+        "required": false,
+        "description": "If the listing needs to support filtering or sorting, this field would allow authors to select criteria (e.g., 'Brand', 'Price Range')."
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

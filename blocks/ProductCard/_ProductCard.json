@@ -1,0 +1,28 @@
+{
+  "models": [
+    {
+      "id": "ProductCard",
+      "name": "ProductCard",
+      "description": "A card component displaying product information.",
+      "fields": [
+        {
+          "name": "product",
+          "type": "text",
+          "label": "Product Name",
+          "required": true,
+          "component": "text"
+        }
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "text",
+      "name": "Text Input",
+      "description": "A simple text input field.",
+      "type": "string",
+      "component": "textfield"
+    }
+  ],
+  "filters": []
+}
