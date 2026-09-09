@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "id": "App",
+      "fields": [
+        {
+          "name": "loading-text",
+          "label": "Loading text",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

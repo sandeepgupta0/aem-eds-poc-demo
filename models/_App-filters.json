@@ -1,0 +1,10 @@
+{
+  "filters": [
+    {
+      "id": "Apps",
+      "components": [
+        "loading-text"
+      ]
+    }
+  ]
+}

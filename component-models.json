@@ -142,6 +142,18 @@
     ]
   },
   {
+    "id": "App",
+    "fields": [
+      {
+        "name": "loading-text",
+        "label": "Loading text",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "Badges",
     "fields": [
       {
@@ -171,6 +183,32 @@
             "value": "danger"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "Header",
+    "fields": [
+      {
+        "name": "text",
+        "component": "text",
+        "valueType": "string",
+        "value": "",
+        "label": "Text"
+      },
+      {
+        "name": "image",
+        "component": "reference",
+        "valueType": "string",
+        "multi": false,
+        "label": "Image"
+      },
+      {
+        "name": "alt",
+        "component": "text",
+        "valueType": "string",
+        "value": "",
+        "label": "Alt Text"
       }
     ]
   },
@@ -230,6 +268,32 @@
         "name": "alt",
         "label": "Alt Text",
         "value": ""
+      }
+    ]
+  },
+  {
+    "id": "UserTable",
+    "fields": [
+      {
+        "name": "text",
+        "component": "text",
+        "valueType": "string",
+        "value": "",
+        "label": "Text"
+      },
+      {
+        "name": "image",
+        "component": "reference",
+        "valueType": "string",
+        "multi": false,
+        "label": "Image"
+      },
+      {
+        "name": "alt",
+        "component": "text",
+        "valueType": "string",
+        "value": "",
+        "label": "Alt Text"
       }
     ]
   },
