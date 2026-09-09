@@ -142,6 +142,12 @@
     ]
   },
   {
+    "id": "App",
+    "name": "App",
+    "description": "A configurable component for displaying user data fetched from an external API.",
+    "fields": []
+  },
+  {
     "id": "Badges",
     "fields": [
       {
@@ -173,6 +179,12 @@
         ]
       }
     ]
+  },
+  {
+    "id": "header",
+    "name": "header",
+    "description": "A structural header component.",
+    "fields": []
   },
   {
     "id": "ProductCard",
@@ -232,6 +244,12 @@
         "value": ""
       }
     ]
+  },
+  {
+    "id": "UserTable",
+    "name": "UserTable",
+    "description": "A generic table structure for displaying user data.",
+    "fields": []
   },
   {
     "id": "card",
