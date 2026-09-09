@@ -1,0 +1,13 @@
+{
+  "filters": [
+    {
+      "id": "UserTables",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title"
+      ]
+    }
+  ]
+}
