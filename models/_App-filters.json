@@ -1,0 +1,13 @@
+{
+  "filters": [
+    {
+      "id": "Apps",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title"
+      ]
+    }
+  ]
+}

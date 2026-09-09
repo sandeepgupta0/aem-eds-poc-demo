@@ -18,7 +18,10 @@
       "fragment",
       "Badges",
       "ProductCard",
-      "ProductListing"
+      "ProductListing",
+      "App",
+      "Header",
+      "UserTable"
     ]
   },
   {
