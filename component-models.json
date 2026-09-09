@@ -142,26 +142,6 @@
     ]
   },
   {
-    "id": "App",
-    "name": "App",
-    "description": "A container block for user management sections.",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pageTitleDescription",
-        "label": "Page Title/Description",
-        "required": true
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "errorMessageTemplate",
-        "label": "Error Message Template"
-      }
-    ]
-  },
-  {
     "id": "Badges",
     "fields": [
       {
@@ -193,12 +173,6 @@
         ]
       }
     ]
-  },
-  {
-    "id": "header",
-    "name": "Header",
-    "description": "A structural block for displaying site headers.",
-    "fields": []
   },
   {
     "id": "ProductCard",
@@ -258,13 +232,6 @@
         "value": ""
       }
     ]
-  },
-  {
-    "id": "UserTable",
-    "name": "UserTable",
-    "title": "User Table Block",
-    "description": "A generic container for displaying user data in a table format.",
-    "fields": []
   },
   {
     "id": "card",
