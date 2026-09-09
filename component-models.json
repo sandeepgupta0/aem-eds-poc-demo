@@ -142,42 +142,6 @@
     ]
   },
   {
-    "name": "App",
-    "description": "A dynamic application block that fetches user data from a configured API endpoint.",
-    "fields": [
-      {
-        "fieldId": "data_source_config",
-        "component": {
-          "type": "api-endpoint-selector",
-          "label": "Data Source Configuration (userApi)",
-          "description": "Select or configure the backend service endpoint for user data retrieval."
-        },
-        "required": true,
-        "contentType": "text"
-      },
-      {
-        "fieldId": "initial_filter_parameters",
-        "component": {
-          "type": "json-key-value-pair",
-          "label": "Initial Filter Parameters (Optional)",
-          "description": "Set default filters, search terms, or pagination limits for the initial API call."
-        },
-        "required": false,
-        "contentType": "json"
-      },
-      {
-        "fieldId": "permission_scope",
-        "component": {
-          "type": "role-selector",
-          "label": "Visible User Scope",
-          "description": "Defines the scope of users visible to the authoring user (e.g., 'Users in Department X' vs. 'All Users'). Critical for security."
-        },
-        "required": true,
-        "contentType": "dropdown"
-      }
-    ]
-  },
-  {
     "id": "Badges",
     "fields": [
       {
@@ -209,11 +173,6 @@
         ]
       }
     ]
-  },
-  {
-    "name": "Header",
-    "description": "A generic site header component.",
-    "fields": {}
   },
   {
     "id": "ProductCard",
@@ -273,12 +232,6 @@
         "value": ""
       }
     ]
-  },
-  {
-    "name": "UserTable",
-    "type": "block",
-    "description": "A reusable block component designed to display a structured table of user data.",
-    "fields": []
   },
   {
     "id": "card",
