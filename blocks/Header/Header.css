@@ -1,0 +1,78 @@
+/* EDS Block: Header — Source styles preserved and scoped to this block. */
+
+.header {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --success: #22c55e;
+  --success-hover: #16a34a;
+  --bg: #f9fafb;
+  --card-bg: #fff;
+  --text: #111827;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px -1px rgb(0 0 0 / 10%);
+
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}.header * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+.header {
+  margin-bottom: 24px;
+}.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}.header .create-form {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}.header .form-row {
+  display: flex;
+  gap: 12px;
+}.header .form-row input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}.header .form-row input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgb(79 70 229 / 10%);
+}
+
+/* Button Styles */
+.header .btn {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}.header .btn:active {
+  transform: scale(0.98);
+}.header .btn-primary {
+  background: var(--primary);
+  color: white;
+}.header .btn-primary:hover {
+  background: var(--primary-hover);
+}@keyframes spin{
+  to {
+    transform: rotate(360deg);
+  }
+}
