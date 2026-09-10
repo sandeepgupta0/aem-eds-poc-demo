@@ -1,0 +1,23 @@
+{
+  "models": [
+    {
+      "id": "App",
+      "fields": [
+        {
+          "component": "text-input",
+          "valueType": "string",
+          "name": "data-source",
+          "label": "Data Source URL",
+          "value": "https://fakestoreapi.com/users"
+        },
+        {
+          "name": "loading-text",
+          "label": "Loading text",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

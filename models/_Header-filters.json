@@ -1,0 +1,13 @@
+{
+  "filters": [
+    {
+      "id": "Headers",
+      "components": [
+        "text-input",
+        "image",
+        "button",
+        "title"
+      ]
+    }
+  ]
+}
