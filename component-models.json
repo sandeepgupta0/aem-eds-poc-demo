@@ -175,6 +175,154 @@
     ]
   },
   {
+    "id": "Footer",
+    "fields": [
+      {
+        "name": "text-gray-300",
+        "label": "Text gray 300",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-lg",
+        "label": "Text lg",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-white",
+        "label": "Text white",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-sm",
+        "label": "Text sm",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-gray-400",
+        "label": "Text gray 400",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "hover:text-white",
+        "label": "Hover:text white",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-center",
+        "label": "Text center",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-xs",
+        "label": "Text xs",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-gray-500",
+        "label": "Text gray 500",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "Header",
+    "fields": [
+      {
+        "name": "text-xl",
+        "label": "Text xl",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-indigo-600",
+        "label": "Text indigo 600",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-white",
+        "label": "Text white",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-sm",
+        "label": "Text sm",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-gray-600",
+        "label": "Text gray 600",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "hover:text-indigo-600",
+        "label": "Hover:text indigo 600",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-xs",
+        "label": "Text xs",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "HeroBanner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "label": "Alt Text",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "ProductCard",
     "fields": [
       {
@@ -229,6 +377,84 @@
         "valueType": "string",
         "name": "alt",
         "label": "Alt Text",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "ProductSlider",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "label": "Alt Text",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "Reviews",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "label": "Alt Text",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "Stars",
+    "fields": [
+      {
+        "name": "-rating-tofixed-1---out-of-5-stars",
+        "label": "{rating.toFixed(1)} out of 5 stars",
+        "component": "text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-sm",
+        "label": "Text sm",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-amber-400",
+        "label": "Text amber 400",
+        "component": "richtext",
+        "valueType": "string",
         "value": ""
       }
     ]
@@ -304,6 +530,39 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "home",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-source",
+        "label": "Data Source URL",
+        "value": "https://dummyjson.com/products"
+      },
+      {
+        "name": "text-sm",
+        "label": "Text sm",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-gray-500",
+        "label": "Text gray 500",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "text-red-600",
+        "label": "Text red 600",
+        "component": "richtext",
+        "valueType": "string",
+        "value": ""
       }
     ]
   }

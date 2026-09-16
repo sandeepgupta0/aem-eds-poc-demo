@@ -1,0 +1,48 @@
+{
+  "definitions": [
+    {
+      "title": "Stars",
+      "id": "Stars",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Stars",
+              "model": "Stars"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "Stars",
+      "fields": [
+        {
+          "name": "-rating-tofixed-1---out-of-5-stars",
+          "label": "{rating.toFixed(1)} out of 5 stars",
+          "component": "text",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-sm",
+          "label": "Text sm",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-amber-400",
+          "label": "Text amber 400",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

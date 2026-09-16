@@ -53,7 +53,14 @@
         "fragment",
         "Badges",
         "ProductCard",
-        "ProductListing"
+        "ProductListing",
+        "Footer",
+        "Header",
+        "HeroBanner",
+        "ProductSlider",
+        "Reviews",
+        "Stars",
+        "home"
       ]
     }
   ]

@@ -1,0 +1,37 @@
+{
+  "models": [
+    {
+      "id": "home",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "data-source",
+          "label": "Data Source URL",
+          "value": "https://dummyjson.com/products"
+        },
+        {
+          "name": "text-sm",
+          "label": "Text sm",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-gray-500",
+          "label": "Text gray 500",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-red-600",
+          "label": "Text red 600",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

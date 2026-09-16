@@ -1,0 +1,58 @@
+{
+  "models": [
+    {
+      "id": "Header",
+      "fields": [
+        {
+          "name": "text-xl",
+          "label": "Text xl",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-indigo-600",
+          "label": "Text indigo 600",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-white",
+          "label": "Text white",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-sm",
+          "label": "Text sm",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-gray-600",
+          "label": "Text gray 600",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "hover:text-indigo-600",
+          "label": "Hover:text indigo 600",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-xs",
+          "label": "Text xs",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

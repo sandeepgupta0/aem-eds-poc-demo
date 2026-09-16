@@ -1,0 +1,72 @@
+{
+  "models": [
+    {
+      "id": "Footer",
+      "fields": [
+        {
+          "name": "text-gray-300",
+          "label": "Text gray 300",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-lg",
+          "label": "Text lg",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-white",
+          "label": "Text white",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-sm",
+          "label": "Text sm",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-gray-400",
+          "label": "Text gray 400",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "hover:text-white",
+          "label": "Hover:text white",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-center",
+          "label": "Text center",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-xs",
+          "label": "Text xs",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "text-gray-500",
+          "label": "Text gray 500",
+          "component": "richtext",
+          "valueType": "string",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}
