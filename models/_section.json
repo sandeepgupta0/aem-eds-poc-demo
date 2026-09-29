@@ -50,10 +50,7 @@
         "hero",
         "cards",
         "columns",
-        "fragment",
-        "App",
-        "UserTable",
-        "page-header"
+        "fragment"
       ]
     }
   ]

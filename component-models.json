@@ -142,51 +142,6 @@
     ]
   },
   {
-    "id": "App",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "data-source",
-        "label": "Data Source URL",
-        "value": "https://fakestoreapi.com/users"
-      },
-      {
-        "name": "loading-text",
-        "label": "Loading text",
-        "component": "richtext",
-        "valueType": "string",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "id": "UserTable",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text",
-        "value": ""
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "label": "Alt Text",
-        "value": ""
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
@@ -257,32 +212,6 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "page-header",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text",
-        "value": ""
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "label": "Alt Text",
-        "value": ""
       }
     ]
   }
