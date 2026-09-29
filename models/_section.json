@@ -50,17 +50,7 @@
         "hero",
         "cards",
         "columns",
-        "fragment",
-        "Badges",
-        "ProductCard",
-        "ProductListing",
-        "Footer",
-        "Header",
-        "HeroBanner",
-        "ProductSlider",
-        "Reviews",
-        "Stars",
-        "home"
+        "fragment"
       ]
     }
   ]
