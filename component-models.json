@@ -142,66 +142,6 @@
     ]
   },
   {
-    "id": "Badges",
-    "fields": [
-      {
-        "name": "children",
-        "label": "children",
-        "component": "text",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "name": "variant",
-        "label": "variant",
-        "component": "text",
-        "valueType": "string",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "id": "ProductCard",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "price",
-        "label": "Price"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "category",
-        "label": "Category"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "stock",
-        "label": "Stock"
-      }
-    ]
-  },
-  {
-    "id": "ProductListing",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "data-source",
-        "label": "Data Source URL",
-        "value": "https://dummyjson.com/products?limit=10&skip=10"
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
