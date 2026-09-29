@@ -15,7 +15,10 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "Badges",
+      "ProductCard",
+      "ProductListing"
     ]
   },
   {
