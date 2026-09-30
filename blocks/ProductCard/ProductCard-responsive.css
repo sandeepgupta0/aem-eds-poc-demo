@@ -1,6 +1,0 @@
-/* EDS Block: ProductCard - Responsive Styles */
-
-/* Mobile-first base styles */
-.group flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white transition hover:shadow-lg dark:border-white/10 dark:bg-zinc-900 {
-  /* Mobile styles */
-}
