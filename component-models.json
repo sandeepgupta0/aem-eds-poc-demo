@@ -142,6 +142,59 @@
     ]
   },
   {
+    "id": "ProductCard",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "id",
+        "label": "Id"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "thumbnail",
+        "label": "Thumbnail"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "category",
+        "label": "Category"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "rating",
+        "label": "Rating"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "price",
+        "label": "Price"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "stock",
+        "label": "Stock"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -212,6 +265,18 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "home",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-source",
+        "label": "Data Source URL",
+        "value": "/api/products"
       }
     ]
   }
