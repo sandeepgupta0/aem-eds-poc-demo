@@ -74,9 +74,9 @@ export function renderProductList(container, props) {
     } else if (sort === 'stock') {
       sorted.sort((a, b) => a.stock - b.stock);
     } else {
-      sorted.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+      sorted.sort((a, b) => String(b.createdAt ?? '').localeCompare(String(a.createdAt ?? '')));
     }
-    appendText(container, sorted);
+    return sorted;
   };
   const el1 = document.createElement('div');
   el1.className = 'page';
