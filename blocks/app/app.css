@@ -1,0 +1,11 @@
+/* EDS Block: app — Source styles preserved and scoped to this block. */
+
+/* stylelint-disable declaration-block-single-line-max-declarations, rule-empty-line-before, at-rule-empty-line-before -- generated single-line rules */
+
+.app .ng-root .navbar {
+  background: #111827; color: #fff; position: sticky; top: 0; z-index: 10;
+  border-bottom: 1px solid #1f2937;
+}.app .ng-root .nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0.8rem 1rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}.app .ng-root .brand { display: flex; align-items: center; gap: 0.5rem; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.05rem; }.app .ng-root .logo { font-size: 1.4rem; }.app .ng-root .tag { font-size: 0.7rem; font-weight: 700; background: #4f46e5; padding: 0.2rem 0.5rem; border-radius: 999px; }.app .ng-root .links { display: flex; gap: 0.5rem; }.app .ng-root .links a { color: #d1d5db; text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 0.45rem 0.8rem; border-radius: 8px; }.app .ng-root .links a:hover { background: #1f2937; color: #fff; }.app .ng-root .links a.active { background: #4f46e5; color: #fff; }.app .ng-root .container { max-width: 1100px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }.app .ng-root .footer { text-align: center; color: #9ca3af; font-size: 0.82rem; padding: 1.5rem 1rem 2rem; }
