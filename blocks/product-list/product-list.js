@@ -52,7 +52,7 @@ export default async function decorate(block) {
     error = null;
     renderBlock();
     try {
-      const response = await fetch(block.dataset.dataSource || 'http://localhost:3000/products');
+      const response = await fetch(block.dataset.dataSource || 'http://localhost:3001/products');
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       data = await response.json();
     } catch (err) {
@@ -79,7 +79,7 @@ export default async function decorate(block) {
     } else if (name === 'saveEdit' && Array.isArray(data)) {
       const id = args[0];
       try {
-        const response = await fetch(`${block.dataset.dataSource || 'http://localhost:3000/products'}/${id}`, {
+        const response = await fetch(`${block.dataset.dataSource || 'http://localhost:3001/products'}/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...editForm, [entityKey]: id }),
@@ -100,7 +100,7 @@ export default async function decorate(block) {
     } else if (name === 'handleDelete' && Array.isArray(data)) {
       const id = args[0];
       try {
-        const response = await fetch(`${block.dataset.dataSource || 'http://localhost:3000/products'}/${id}`, {
+        const response = await fetch(`${block.dataset.dataSource || 'http://localhost:3001/products'}/${id}`, {
           method: 'DELETE',
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -117,7 +117,7 @@ export default async function decorate(block) {
     } else if (name === 'handleSubmit') {
       if (Object.keys(createForm).length === 0) return;
       try {
-        const response = await fetch(block.dataset.dataSource || 'http://localhost:3000/products', {
+        const response = await fetch(block.dataset.dataSource || 'http://localhost:3001/products', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(createForm),

@@ -223,7 +223,7 @@
         "valueType": "string",
         "name": "data-source",
         "label": "Data Source URL",
-        "value": "http://localhost:3000/products"
+        "value": "http://localhost:3001/products"
       }
     ]
   }
