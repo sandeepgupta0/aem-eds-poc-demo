@@ -1,0 +1,25 @@
+/* EDS Block: productlist — Source styles preserved and scoped to this block. */
+
+/* stylelint-disable declaration-block-single-line-max-declarations, rule-empty-line-before, at-rule-empty-line-before -- generated single-line rules */
+
+.productlist .page { display: flex; flex-direction: column; gap: 1rem; }.productlist .page .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }.productlist .page .stat {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+  padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.2rem;
+}.productlist .page .stat-label { font-size: 0.8rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }.productlist .page .stat-value { font-size: 1.4rem; font-weight: 700; color: #111827; }.productlist .page .stat.warn { border-color: #fecaca; background: #fef2f2; }.productlist .page .stat.warn .stat-value { color: #b91c1c; }.productlist .page .toolbar {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 0.75rem;
+}.productlist .page .filters { display: flex; gap: 0.5rem; flex-wrap: wrap; flex: 1; }.productlist .page .actions { display: flex; gap: 0.5rem; align-items: center; }.productlist .page .input {
+  border: 1px solid #d1d5db; border-radius: 8px; padding: 0.55rem 0.7rem;
+  font-size: 0.9rem; min-width: 160px; background: #fff;
+}.productlist .page .search { flex: 1; min-width: 220px; }.productlist .page .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 0.55rem 0.9rem; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; border: 1px solid transparent; text-decoration: none; white-space: nowrap;
+}.productlist .page .btn.primary { background: #4f46e5; color: #fff; }.productlist .page .btn.primary:hover { background: #4338ca; }.productlist .page .btn.secondary { background: #eef2ff; color: #4338ca; border-color: #c7d2fe; }.productlist .page .btn.ghost { background: #fff; border-color: #d1d5db; color: #374151; }.productlist .page .btn.small { padding: 0.35rem 0.65rem; font-size: 0.82rem; }.productlist .page .btn.danger { background: #dc2626; color: #fff; }.productlist .page .btn.danger-outline { background: #fff; color: #dc2626; border-color: #fecaca; }.productlist .page .btn.danger-outline:hover { background: #fef2f2; }.productlist .page .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.9rem; }.productlist .page .card {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1rem;
+  display: flex; flex-direction: column; gap: 0.5rem; transition: box-shadow 0.15s, transform 0.15s;
+}.productlist .page .card:hover { box-shadow: 0 8px 24px rgb(0 0 0 / 8%); transform: translateY(-1px); }.productlist .page .card.low { border-color: #fecaca; }.productlist .page .card-head { display: flex; gap: 0.4rem; flex-wrap: wrap; }.productlist .page .badge { font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 999px; background: #f3f4f6; color: #374151; }.productlist .page .badge.ok { background: #dcfce7; color: #166534; }.productlist .page .badge.danger { background: #fee2e2; color: #991b1b; }.productlist .page .card-title { margin: 0; font-size: 1.1rem; cursor: pointer; color: #111827; }.productlist .page .card-title:hover { color: #4f46e5; text-decoration: underline; }.productlist .page .card-desc { margin: 0; color: #6b7280; font-size: 0.9rem; min-height: 2.6em;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }.productlist .page .card-price { font-size: 1.25rem; font-weight: 800; color: #111827; }.productlist .page .card-id { font-size: 0.75rem; color: #9ca3af; font-family: monospace; }.productlist .page .card-footer { display: flex; gap: 0.4rem; margin-top: auto; flex-wrap: wrap; align-items: center; }.productlist .page .confirm { display: inline-flex; gap: 0.3rem; align-items: center; font-size: 0.85rem; font-weight: 600; }.productlist .page .empty {
+  text-align: center; background: #fff; border: 1px dashed #d1d5db;
+  border-radius: 14px; padding: 3rem 1rem; color: #6b7280;
+}.productlist .page .empty h2 { color: #111827; margin: 0 0 0.4rem; }@media (width <= 720px){.productlist .page .stats { grid-template-columns: 1fr; }.productlist .page .toolbar { flex-direction: column; }}
