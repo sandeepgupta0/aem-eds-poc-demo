@@ -214,17 +214,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "productlist",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "data-source",
-        "label": "Data Source URL",
-        "value": "http://localhost:3001/products"
-      }
-    ]
   }
 ]
