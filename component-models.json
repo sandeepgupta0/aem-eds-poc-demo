@@ -233,5 +233,17 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "user-table",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-source",
+        "label": "Data Source URL",
+        "value": "https://dummyjson.com/users?limit=10"
+      }
+    ]
   }
 ]
