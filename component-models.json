@@ -214,43 +214,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "product-list",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "data-source",
-        "label": "Data Source URL",
-        "value": "http://localhost:3005/products"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "currency",
-        "label": "Currency",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "entity-key",
-        "label": "Entity Key",
-        "value": "id"
-      }
-    ]
-  },
-  {
-    "id": "productdetail",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "data-source",
-        "label": "Data Source URL",
-        "value": "http://localhost:3001/products"
-      }
-    ]
   }
 ]
