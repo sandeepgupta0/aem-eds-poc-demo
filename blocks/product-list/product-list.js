@@ -5,7 +5,6 @@
  * Framework: angular
  */
 
-import { moveInstrumentation } from '../../scripts/scripts.js';
 import {
   setDefaultCurrency,
   renderProduct_list,
@@ -16,7 +15,6 @@ const componentEventListeners = new WeakMap();
 
 
 export default async function decorate(block) {
-  moveInstrumentation(block);
   if (block.dataset.blockName == null) block.dataset.blockName = 'product-list';
   setDefaultCurrency(block.dataset.currency || null);
 

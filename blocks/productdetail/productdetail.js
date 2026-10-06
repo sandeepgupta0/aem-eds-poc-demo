@@ -5,7 +5,6 @@
  * Framework: angular
  */
 
-import { moveInstrumentation } from '../../scripts/scripts.js';
 import {
   setDefaultCurrency,
   renderProductDetail,
@@ -13,7 +12,6 @@ import {
 /* eslint-disable no-console */
 
 export default async function decorate(block) {
-  moveInstrumentation(block);
   if (block.dataset.blockName == null) block.dataset.blockName = 'productdetail';
   setDefaultCurrency(block.dataset.currency || null);
 
