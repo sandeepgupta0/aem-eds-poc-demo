@@ -19,6 +19,9 @@ export default async function decorate(block) {
   setDefaultCurrency(block.dataset.currency || null);
 
   const entityKey = block.dataset.entityKey || 'id';
+  // Local mock API fallback so the block renders even before the data-source
+  // property is authored in UE. Set Data Source URL in UE for production.
+  const apiBase = () => (block.dataset.dataSource || 'http://localhost:3005/products').replace(/\/+$/, '');
   let data = null;
   let loading = true;
   let error = null;
@@ -65,8 +68,7 @@ export default async function decorate(block) {
     error = null;
     renderBlock();
     try {
-      const endpoint = block.dataset.dataSource || "";
-      if (!endpoint) throw new Error('Configure the data-source field with an API URL.');
+      const endpoint = apiBase();
       const response = await fetch(endpoint);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       data = await response.json();
@@ -94,8 +96,7 @@ export default async function decorate(block) {
     } else if (name === 'saveEdit' && Array.isArray(data)) {
       const id = args[0];
       try {
-        if (!(block.dataset.dataSource || "").replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch(`${(block.dataset.dataSource || "").replace(/\/+$/, '')}/${id}`, {
+        const response = await fetch(`${apiBase()}/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...editForm, [entityKey]: id }),
@@ -116,8 +117,7 @@ export default async function decorate(block) {
     } else if (name === 'handleDelete' && Array.isArray(data)) {
       const id = args[0];
       try {
-        if (!(block.dataset.dataSource || "").replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch(`${(block.dataset.dataSource || "").replace(/\/+$/, '')}/${id}`, {
+        const response = await fetch(`${apiBase()}/${id}`, {
           method: 'DELETE',
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -135,8 +135,7 @@ export default async function decorate(block) {
     } else if (name === 'handleSubmit') {
       if (Object.keys(createForm).length === 0) return;
       try {
-        if (!(block.dataset.dataSource || "").replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch((block.dataset.dataSource || "").replace(/\/+$/, ''), {
+        const response = await fetch(apiBase(), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(createForm),
