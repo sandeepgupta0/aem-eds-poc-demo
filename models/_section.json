@@ -50,9 +50,7 @@
         "hero",
         "cards",
         "columns",
-        "fragment",
-        "product-card",
-        "product-listing"
+        "fragment"
       ]
     }
   ]
