@@ -5,19 +5,25 @@
  * Framework: angular
  */
 
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { readBlockConfig } from '../../scripts/aem.js';
 import {
   setDefaultCurrency,
-  renderProduct_list,
+  renderProduct_list as renderProductList,
 } from '../shared/generated-jsx.js';
 /* eslint-disable no-console */
 
 const componentEventListeners = new WeakMap();
 
-
 export default async function decorate(block) {
-  moveInstrumentation(block);
   if (block.dataset.blockName == null) block.dataset.blockName = 'product-list';
+  // Read authored model fields (e.g. Data Source URL) before renderBlock()
+  // replaces the UE-delivered table DOM. Do NOT call moveInstrumentation(block)
+  // with a single arg here - it strips the block's data-aue-* attributes.
+  const config = readBlockConfig(block);
+  const getEndpoint = () => {
+    const value = config['data-source'] || block.dataset.dataSource || '';
+    return (Array.isArray(value) ? value[0] : value || '').trim();
+  };
   setDefaultCurrency(block.dataset.currency || null);
 
   const entityKey = block.dataset.entityKey || 'id';
@@ -30,14 +36,19 @@ export default async function decorate(block) {
   let createForm = {};
 
   const renderBlock = (focusTarget = null) => {
-    const selector = 'input, select, textarea, button, a[href], [tabindex]';
+    const selector = [
+      'input, select, textarea, button,',
+      'a[href], [tabindex]',
+    ].join(' ');
     const focusables = [...block.querySelectorAll(selector)];
-    const focusIndex = focusTarget && block.contains(focusTarget) ? focusables.indexOf(focusTarget) : -1;
+    const focusIndex = focusTarget && block.contains(focusTarget)
+      ? focusables.indexOf(focusTarget)
+      : -1;
     const selectionStart = focusIndex >= 0 && 'selectionStart' in focusTarget ? focusTarget.selectionStart : null;
     const selectionEnd = focusIndex >= 0 && 'selectionEnd' in focusTarget ? focusTarget.selectionEnd : null;
     block.replaceChildren();
     try {
-      renderProduct_list(block, {
+      renderProductList(block, {
         data,
         loading,
         error,
@@ -67,7 +78,7 @@ export default async function decorate(block) {
     error = null;
     renderBlock();
     try {
-      const endpoint = block.dataset.dataSource || "";
+      const endpoint = getEndpoint();
       if (!endpoint) throw new Error('Configure the data-source field with an API URL.');
       const response = await fetch(endpoint);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -96,8 +107,8 @@ export default async function decorate(block) {
     } else if (name === 'saveEdit' && Array.isArray(data)) {
       const id = args[0];
       try {
-        if (!(block.dataset.dataSource || "").replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch(`${(block.dataset.dataSource || "").replace(/\/+$/, '')}/${id}`, {
+        if (!getEndpoint().replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
+        const response = await fetch(`${getEndpoint().replace(/\/+$/, '')}/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...editForm, [entityKey]: id }),
@@ -118,8 +129,8 @@ export default async function decorate(block) {
     } else if (name === 'handleDelete' && Array.isArray(data)) {
       const id = args[0];
       try {
-        if (!(block.dataset.dataSource || "").replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch(`${(block.dataset.dataSource || "").replace(/\/+$/, '')}/${id}`, {
+        if (!getEndpoint().replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
+        const response = await fetch(`${getEndpoint().replace(/\/+$/, '')}/${id}`, {
           method: 'DELETE',
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -137,8 +148,8 @@ export default async function decorate(block) {
     } else if (name === 'handleSubmit') {
       if (Object.keys(createForm).length === 0) return;
       try {
-        if (!(block.dataset.dataSource || "").replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch((block.dataset.dataSource || "").replace(/\/+$/, ''), {
+        if (!getEndpoint().replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
+        const response = await fetch(getEndpoint().replace(/\/+$/, ''), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(createForm),
