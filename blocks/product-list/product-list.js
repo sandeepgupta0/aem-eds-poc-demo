@@ -16,14 +16,28 @@ const componentEventListeners = new WeakMap();
 
 export default async function decorate(block) {
   if (block.dataset.blockName == null) block.dataset.blockName = 'product-list';
-  // Read authored model fields (e.g. Data Source URL) before renderBlock()
-  // replaces the UE-delivered table DOM. Do NOT call moveInstrumentation(block)
-  // with a single arg here - it strips the block's data-aue-* attributes.
+  // Read the authored Data Source URL before renderBlock() replaces the
+  // UE-delivered table DOM (capture once - children are gone afterwards).
+  // UE renders a single-field model as one row with one column holding just
+  // the value (often auto-linkified), while document authoring uses
+  // two-column key/value rows parsed by readBlockConfig. Support both.
+  // Do NOT call moveInstrumentation(block) with a single arg here - it strips
+  // the block's data-aue-* attributes.
   const config = readBlockConfig(block);
-  const getEndpoint = () => {
-    const value = config['data-source'] || block.dataset.dataSource || '';
-    return (Array.isArray(value) ? value[0] : value || '').trim();
+  const firstCell = block.querySelector(':scope > div > div');
+  const firstCellValue = firstCell
+    ? (firstCell.querySelector('a')?.href || firstCell.textContent || '')
+    : '';
+  const normalize = (candidate) => {
+    const raw = Array.isArray(candidate) ? candidate[0] : candidate;
+    return (typeof raw === 'string' ? raw : '').trim();
   };
+  const endpoint = [
+    config['data-source'],
+    block.dataset.dataSource,
+    firstCellValue,
+  ].map(normalize).find((value) => value) || '';
+  const apiBase = endpoint.replace(/\/+$/, '');
   setDefaultCurrency(block.dataset.currency || null);
 
   const entityKey = block.dataset.entityKey || 'id';
@@ -78,7 +92,6 @@ export default async function decorate(block) {
     error = null;
     renderBlock();
     try {
-      const endpoint = getEndpoint();
       if (!endpoint) throw new Error('Configure the data-source field with an API URL.');
       const response = await fetch(endpoint);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -107,8 +120,8 @@ export default async function decorate(block) {
     } else if (name === 'saveEdit' && Array.isArray(data)) {
       const id = args[0];
       try {
-        if (!getEndpoint().replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch(`${getEndpoint().replace(/\/+$/, '')}/${id}`, {
+        if (!apiBase) throw new Error('Configure the data-source field with an API URL.');
+        const response = await fetch(`${apiBase}/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...editForm, [entityKey]: id }),
@@ -129,8 +142,8 @@ export default async function decorate(block) {
     } else if (name === 'handleDelete' && Array.isArray(data)) {
       const id = args[0];
       try {
-        if (!getEndpoint().replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch(`${getEndpoint().replace(/\/+$/, '')}/${id}`, {
+        if (!apiBase) throw new Error('Configure the data-source field with an API URL.');
+        const response = await fetch(`${apiBase}/${id}`, {
           method: 'DELETE',
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -148,8 +161,8 @@ export default async function decorate(block) {
     } else if (name === 'handleSubmit') {
       if (Object.keys(createForm).length === 0) return;
       try {
-        if (!getEndpoint().replace(/\/+$/, '')) throw new Error('Configure the data-source field with an API URL.');
-        const response = await fetch(getEndpoint().replace(/\/+$/, ''), {
+        if (!apiBase) throw new Error('Configure the data-source field with an API URL.');
+        const response = await fetch(apiBase, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(createForm),
