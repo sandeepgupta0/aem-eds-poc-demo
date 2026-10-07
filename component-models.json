@@ -214,17 +214,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "product-list",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "data-source",
-        "label": "Data Source URL",
-        "value": ""
-      }
-    ]
   }
 ]
