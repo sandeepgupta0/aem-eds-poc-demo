@@ -40,118 +40,89 @@ export function dispatchEvent(name, args, event) {
   }));
 }
 
-export function renderProductCard(container, props) {
-  const { product } = props;
-  const el1 = document.createElement('a');
-  el1.setAttribute('href', `/products/${product.id}`);
-  el1.className = 'group flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white transition hover:shadow-lg dark:border-white/10 dark:bg-zinc-900';
-  const el2 = document.createElement('div');
-  el2.className = 'relative aspect-square w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800';
-  const el3 = document.createElement('img');
-  el3.setAttribute('src', product.thumbnail);
-  el3.setAttribute('alt', product.title);
-  el3.setAttribute('sizes', '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw');
-  el3.className = 'object-cover transition group-hover:scale-105';
-  el2.appendChild(el3);
-  const el4 = document.createElement('span');
-  el4.className = 'absolute left-2 top-2 rounded-full bg-black/70 px-2 py-0.5 text-xs font-medium text-white';
-  appendText(el4, product.category);
-  el2.appendChild(el4);
-  el1.appendChild(el2);
-  const el5 = document.createElement('div');
-  el5.className = 'flex flex-1 flex-col gap-2 p-4';
-  const el6 = document.createElement('div');
-  el6.className = 'flex items-start justify-between gap-2';
-  const el7 = document.createElement('h3');
-  el7.className = 'line-clamp-1 font-semibold text-zinc-900 dark:text-zinc-50';
-  appendText(el7, product.title);
-  el6.appendChild(el7);
-  const el8 = document.createElement('span');
-  el8.className = 'shrink-0 rounded bg-yellow-100 px-1.5 py-0.5 text-xs font-semibold text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100';
-  appendText(el8, '★');
-  appendText(el8, product.rating?.toFixed(1));
-  el6.appendChild(el8);
-  el5.appendChild(el6);
-  const el9 = document.createElement('p');
-  el9.className = 'line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400';
-  appendText(el9, product.description);
-  el5.appendChild(el9);
-  const el10 = document.createElement('div');
-  el10.className = 'mt-auto flex items-center justify-between pt-2';
-  const el11 = document.createElement('span');
-  el11.className = 'text-lg font-bold text-zinc-900 dark:text-white';
-  appendText(el11, '$');
-  appendText(el11, product.price);
-  el10.appendChild(el11);
-  const el12 = document.createElement('span');
-  el12.className = 'text-xs text-zinc-500 dark:text-zinc-400';
-  appendText(el12, product.stock);
-  appendText(el12, 'in stock');
-  el10.appendChild(el12);
-  el5.appendChild(el10);
-  el1.appendChild(el5);
+export function renderBadges(container, props) {
+  const { children, variant = 'default' } = props;
+  console.log(children);
+  const styles = { default: { background: '#EEF0F8', color: '#1E2761' }, success: { background: '#E1F5EE', color: '#085041' }, danger: { background: '#FAECE7', color: '#712B13' } };
+  const el1 = document.createElement('span');
+  applyInlineStyle(el1, { ...styles[variant], padding: '2px 8px', borderRadius: '6px', fontSize: '12px', fontWeight: 600 });
+  appendText(el1, children);
   container.appendChild(el1);
 }
 
-export function renderHome(container, props) {
-  const { error } = props;
-  function renderGridSkeleton(container, props) {
-    const {  } = props;
-    const el1 = document.createElement('div');
-    el1.className = 'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3';
-    (Array.from({ length: 6 }) || []).forEach((_, index) => {
-      const el2 = document.createElement('div');
-      el2.className = 'h-80 animate-pulse rounded-xl bg-zinc-200 dark:bg-zinc-800';
-      el1.appendChild(el2);
-    });
-    container.appendChild(el1);
-  }
-  const products = (Array.isArray(props.data) ? props.data : props.data?.products) ?? props.products ?? null;
-  const setProducts = () => {};
+export function renderProductCard(container, props) {
+  const { product } = props;
   const el1 = document.createElement('div');
-  el1.className = 'mx-auto w-full max-w-6xl flex-1 px-6 py-10';
+  el1.addEventListener('click', (e) => dispatchEvent('onClick', [], e));
+  applyInlineStyle(el1, { padding: '10px', border: '1px solid #E2E2E2', borderRadius: '10px', cursor: 'pointer', flex: '1 1 200px', maxWidth: '300px' });
   const el2 = document.createElement('div');
-  el2.className = 'mb-8';
-  const el3 = document.createElement('p');
-  el3.className = 'text-sm font-medium uppercase tracking-widest text-zinc-500';
-  appendText(el3, 'CSR · Shared API call');
-  el2.appendChild(el3);
-  const el4 = document.createElement('h1');
-  el4.className = 'mt-1 text-3xl font-bold tracking-tight';
-  appendText(el4, 'Product Listing');
-  el2.appendChild(el4);
-  const el5 = document.createElement('p');
-  el5.className = 'mt-2 max-w-2xl text-zinc-600 dark:text-zinc-400';
-  appendText(el5, 'This listing is client-side rendered: the browser fetches');
-  appendText(el5, ' ');
-  const el6 = document.createElement('code');
-  appendText(el6, '/api/products');
-  el5.appendChild(el6);
-  appendText(el5, ', which reuses the same');
-  appendText(el5, ' ');
-  const el7 = document.createElement('code');
-  appendText(el7, 'getProducts()');
-  el5.appendChild(el7);
-  appendText(el5, 'API layer as the SSR detail page.');
-  el2.appendChild(el5);
+  appendText(el2, product.title);
   el1.appendChild(el2);
-  if (error) {
-    const el8 = document.createElement('p');
-    el8.className = 'rounded-lg bg-red-50 p-4 text-sm text-red-600 dark:bg-red-950 dark:text-red-300';
-    appendText(el8, 'Failed to load products:');
-    appendText(el8, error);
-    el1.appendChild(el8);
+  const el3 = document.createElement('p');
+  applyInlineStyle(el3, { margin: '0 0 10px', fontSize: '18px', fontWeight: 700 });
+  appendText(el3, formatPrice(product.price));
+  el1.appendChild(el3);
+  const el4 = document.createElement('div');
+  applyInlineStyle(el4, { display: 'flex', gap: '6px', flexWrap: 'wrap' });
+  renderBadges(el4, { ...props, children: product.category });
+  if ((product.stock) > (0)) {
+    renderBadges(el4, { ...props, variant: 'success', children: 'In Stock' });
   } else {
-    if ((products) === (null)) {
-      renderGridSkeleton(el1, { ...props });
-    } else {
-      const el9 = document.createElement('div');
-      el9.className = 'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3';
-      (products || []).forEach((product) => {
-        renderProductCard(el9, { ...props, product: product });
-      });
-      el1.appendChild(el9);
-    }
+    renderBadges(el4, { ...props, variant: 'danger', children: 'Out of Stock' });
+  }
+  el1.appendChild(el4);
+  if ((product.stock) > (0)) {
+    const el5 = document.createElement('button');
+    el5.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dispatchEvent('addToCart', [product], e);
+    });
+    applyInlineStyle(el5, { marginTop: '10px', padding: '6px 14px', borderRadius: '6px', border: '1px solid #1E2761', background: '#1E2761', color: '#fff', cursor: 'pointer', fontSize: '13px', fontWeight: 600 });
+    appendText(el5, 'Add to Cart');
+    el1.appendChild(el5);
   }
   container.appendChild(el1);
+}
+
+export function renderProductListing(container, props) {
+  const { data, loading, error } = props;
+  if (loading) {
+    const el1 = document.createElement('div');
+    applyInlineStyle(el1, { padding: '40px', textAlign: 'center', width: '70%' });
+    const el2 = document.createElement('div');
+    el2.className = 'spinner';
+    el1.appendChild(el2);
+    const el3 = document.createElement('p');
+    appendText(el3, 'Loading products...');
+    el1.appendChild(el3);
+    container.appendChild(el1);
+    return container;
+  }
+  if (error) {
+    const el4 = document.createElement('div');
+    applyInlineStyle(el4, { padding: '40px', textAlign: 'center', width: '70%' });
+    const el5 = document.createElement('p');
+    applyInlineStyle(el5, { color: 'red' });
+    appendText(el5, 'Error:');
+    appendText(el5, error);
+    el4.appendChild(el5);
+    const el6 = document.createElement('button');
+    el6.addEventListener('click', (e) => dispatchEvent('retry', [], e));
+    applyInlineStyle(el6, { padding: '8px 16px', borderRadius: '6px', border: '1px solid #ccc', cursor: 'pointer', marginTop: '8px' });
+    appendText(el6, 'Retry');
+    el4.appendChild(el6);
+    container.appendChild(el4);
+    return container;
+  }
+  const products = (data?.products) || ([]);
+  if (!products.length) {
+    appendText(container, 'No Product Available');
+    return container;
+  }
+  const el7 = document.createElement('div');
+  applyInlineStyle(el7, { display: 'flex', flexWrap: 'wrap', gap: '16px', padding: '20px', flex: 1 });
+  (products || []).forEach((product) => {
+    renderProductCard(el7, { ...props, product: product, onClick: (e) => dispatchEvent('onProductClick', [product.id]) });
+  });
+  container.appendChild(el7);
 }

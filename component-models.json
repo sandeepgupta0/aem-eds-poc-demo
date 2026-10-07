@@ -142,62 +142,13 @@
     ]
   },
   {
-    "id": "Badges",
-    "fields": [
-      {
-        "name": "children",
-        "label": "children",
-        "component": "text",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "name": "variant",
-        "label": "variant",
-        "component": "text",
-        "valueType": "string",
-        "value": ""
-      }
-    ]
-  },
-  {
     "id": "ProductCard",
     "fields": [
       {
         "component": "text",
         "valueType": "string",
-        "name": "id",
-        "label": "Id"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "thumbnail",
-        "label": "Thumbnail"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
         "name": "title",
         "label": "Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "category",
-        "label": "Category"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "rating",
-        "label": "Rating"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
       },
       {
         "component": "text",
@@ -208,8 +159,47 @@
       {
         "component": "text",
         "valueType": "string",
+        "name": "category",
+        "label": "Category"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
         "name": "stock",
         "label": "Stock"
+      }
+    ]
+  },
+  {
+    "id": "badges",
+    "fields": [
+      {
+        "name": "children",
+        "label": "Text",
+        "component": "text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "component": "select",
+        "valueType": "string",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Success",
+            "value": "success"
+          },
+          {
+            "name": "Danger",
+            "value": "danger"
+          }
+        ]
       }
     ]
   },
@@ -284,6 +274,30 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "product-detail",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-source",
+        "label": "Data Source URL",
+        "value": "https://dummyjson.com/products/1"
+      }
+    ]
+  },
+  {
+    "id": "product-listing",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "data-source",
+        "label": "Data Source URL",
+        "value": "https://dummyjson.com/products?limit=10&skip=10"
       }
     ]
   }

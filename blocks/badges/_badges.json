@@ -1,0 +1,55 @@
+{
+  "definitions": [
+    {
+      "title": "Badges",
+      "id": "badges",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "badges",
+              "model": "badges"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "badges",
+      "fields": [
+        {
+          "name": "children",
+          "label": "Text",
+          "component": "text",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "name": "variant",
+          "label": "Variant",
+          "component": "select",
+          "valueType": "string",
+          "value": "default",
+          "options": [
+            {
+              "name": "Default",
+              "value": "default"
+            },
+            {
+              "name": "Success",
+              "value": "success"
+            },
+            {
+              "name": "Danger",
+              "value": "danger"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
